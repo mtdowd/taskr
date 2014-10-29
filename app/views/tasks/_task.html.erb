@@ -1,0 +1,9 @@
+<section>
+<ul>
+  <li class="<%= task_css_classes(task) %>">
+    <%= task.content %>
+    <%= button_to "Complete", complete_task_path(task) %>
+  </li>
+</ul>
+</section>
+

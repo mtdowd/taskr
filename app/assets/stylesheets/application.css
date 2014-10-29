@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+.completed {
+  text-decoration: line-through;
+}
+
+.completed form {
+  display: none;
+}

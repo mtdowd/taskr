@@ -1,0 +1,13 @@
+<h1><%= current_user.name %>'s Tasks </h1>
+
+<%= render @tasks %>
+
+<section>
+  <fieldset style="width: 400px">
+    <%= form_for @task do |form| %>
+      <%= form.text_field :content, placeholder:"New Task" %>
+      <%= form.submit %>
+    <% end %>
+  </fieldset>
+</section>
+
