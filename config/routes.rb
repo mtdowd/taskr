@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
 
-  resources :tasks, only: [:create, :index] do
+  resources :tasks, only: [:create, :destroy, :index] do
     member do
       post "complete" => "task_completions#create"
     end

@@ -6,9 +6,20 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = current_user.tasks.create(task_params)
+    @task = current_user.tasks.new(task_params)
 
-    redirect_to index
+    if @task.save
+      render @task
+    else
+      head 422
+    end
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+
+    head 200
   end
 
   private
